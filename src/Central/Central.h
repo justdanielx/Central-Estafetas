@@ -2,6 +2,7 @@
 #define CENTRAL_H
 
 #include <sys/types.h>
+#include <signal.h>
 #include "../Protocolo/Protocolo.h"
 
 #define DEF_MAXESTAFETAS 10
@@ -16,6 +17,7 @@
 #define TAM_LINHA_CMD 256
 #define TAM_LINHA_TARIFADOR 128
 #define TAM_CAMINHO 512
+#define MAX_TOKENS 6
 
 typedef struct {
     int maxEstafetas;
@@ -44,5 +46,33 @@ typedef struct {
     Tarifador tarifador;
     Estatisticas stats;
 } Central;
+
+extern volatile sig_atomic_t terminar;
+extern volatile sig_atomic_t alarme;
+
+//Sinais
+int instalaSinais(void);
+
+//Configuração
+int leInteiroPositivo(const char *texto, int *valor);
+int leRealPositivo(const char *texto, float *valor);
+int obtemConfig(int argc, char *argv[], ConfigCentral *config);
+
+//Instância
+int verificaInstanciaUnica(void);
+void libertaInstancia(void);
+
+//Tarifador
+int lancaTarifador(Central *central);
+int testaTarifador(Central *central);
+void terminaTarifador(Central *central, int esperaLimitada);
+int tarifa(Central *central, const char *origem, const char *destino, float peso, float *distancia, float *valor);
+
+//Consola
+void executaConsola(Central *central);
+
+//Central
+int iniciaCentral(Central *central, int argc, char *argv[]);
+void encerraCentral(Central *central);
 
 #endif
