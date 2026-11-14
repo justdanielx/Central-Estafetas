@@ -40,8 +40,8 @@ static int copiaTexto(char *destino, size_t tamanho, const char *origem) {
     return 0;
 }
 
-static void mostraUso(const char *nome) {
-    fprintf(stderr, "Uso: %s [-p <segundos>] [-m <numero>]\n", nome);
+static void mostraSintaxe(const char *nome) {
+    fprintf(stderr, "Sintaxe: %s [-p <segundos>] [-m <numero>]\n", nome);
 }
 
 int obtemConfig(int argc, char *argv[], ConfigCentral *config) {
@@ -90,7 +90,7 @@ int obtemConfig(int argc, char *argv[], ConfigCentral *config) {
             }
         } else {
             fprintf(stderr, "[ERRO] Argumento invalido: '%s'\n", argv[i]);
-            mostraUso(argv[0]);
+            mostraSintaxe(argv[0]);
             return -1;
         }
     }

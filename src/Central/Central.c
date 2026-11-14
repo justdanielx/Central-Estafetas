@@ -47,7 +47,7 @@ int iniciaCentral(Central *central, int argc, char *argv[]) {
            (int) getpid(), central->config.maxEstafetas, central->config.prazoAceita,
            central->config.bindir);
     if (central->config.centralPipe[0] == '\0')
-        printf("[AVISO] %s nao definida (sera obrigatoria na meta final)\n", VAR_CENTRAL_PIPE);
+        printf("[AVISO] %s nao definida\n", VAR_CENTRAL_PIPE);
     else
         printf("[CENTRAL] %s: %s\n", VAR_CENTRAL_PIPE, central->config.centralPipe);
 
@@ -57,5 +57,5 @@ int iniciaCentral(Central *central, int argc, char *argv[]) {
 void encerraCentral(Central *central) {
     terminaTarifador(central, 1);
     libertaInstancia();
-    printf("[CENTRAL] Recursos libertados. Adeus.\n");
+    printf("[CENTRAL] Central terminada\n");
 }

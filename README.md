@@ -8,4 +8,4 @@ Sistema de despacho de entregas desenvolvido em C para Linux
 - Visual Studio Code: código
 - PuTTY: terminais SSH para a máquina virtual
 
-Autores: Daniel Ramada
+Autor: Daniel Ramada

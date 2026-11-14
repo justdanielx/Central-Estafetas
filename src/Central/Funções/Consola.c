@@ -97,7 +97,7 @@ static int cmdPedido(Central *central, char *tokens[]) {
 }
 
 static void cmdNaoDisponivel(const char *comando) {
-    printf("[INFO] Comando '%s' valido, mas so fica disponivel na meta final\n", comando);
+    printf("[INFO] Comando '%s' ainda nao implementado\n", comando);
 }
 
 static int processaComando(Central *central, char *linha) {
@@ -114,7 +114,7 @@ static int processaComando(Central *central, char *linha) {
 
     if (strcmp(tokens[0], "encerra") == 0) {
         if (n != 1) {
-            printf("[ERRO] Uso: encerra\n");
+            printf("[ERRO] Sintaxe: encerra\n");
             return 0;
         }
         printf("[CENTRAL] A encerrar a pedido do administrador\n");
@@ -122,28 +122,28 @@ static int processaComando(Central *central, char *linha) {
     }
     if (strcmp(tokens[0], "stats") == 0) {
         if (n != 1)
-            printf("[ERRO] Uso: stats\n");
+            printf("[ERRO] Sintaxe: stats\n");
         else
             cmdStats(central);
         return 0;
     }
     if (strcmp(tokens[0], "pedido") == 0) {
         if (n != 4) {
-            printf("[ERRO] Uso: pedido <origem> <destino> <peso>\n");
+            printf("[ERRO] Sintaxe: pedido <origem> <destino> <peso>\n");
             return 0;
         }
         return cmdPedido(central, tokens);
     }
     if (strcmp(tokens[0], "estafetas") == 0 || strcmp(tokens[0], "pedidos") == 0) {
         if (n != 1)
-            printf("[ERRO] Uso: %s\n", tokens[0]);
+            printf("[ERRO] Sintaxe: %s\n", tokens[0]);
         else
             cmdNaoDisponivel(tokens[0]);
         return 0;
     }
     if (strcmp(tokens[0], "prazo") == 0) {
         if (n != 2 || leInteiroPositivo(tokens[1], &valor) == -1)
-            printf("[ERRO] Uso: prazo <segundos> (inteiro positivo)\n");
+            printf("[ERRO] Sintaxe: prazo <segundos> (inteiro positivo)\n");
         else
             cmdNaoDisponivel(tokens[0]);
         return 0;
@@ -168,7 +168,7 @@ void executaConsola(Central *central) {
             break;
         }
         if (r == 0) {
-            printf("\n[CENTRAL] Fim do stdin\n");
+            printf("\n[CENTRAL] Fim da entrada de comandos\n");
             break;
         }
         if (r == -2) {
