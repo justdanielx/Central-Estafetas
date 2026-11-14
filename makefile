@@ -1,33 +1,41 @@
 CC = gcc
 CFLAGS = -Wall -Wextra
 DEPS = src/Central/Central.h src/Protocolo/Protocolo.h
-OBJ = src/Central/main.o src/Central/Central.o src/Central/Funções/Sinais.o src/Central/Funções/Configuração.o src/Central/Funções/Instância.o src/Central/Funções/Tarifador.o src/Central/Funções/Consola.o
+OBJ = obj/main.o obj/Central.o obj/Sinais.o obj/Configuração.o obj/Instância.o obj/Tarifador.o obj/Consola.o
 
 all: central
 
 central: $(OBJ)
 	$(CC) $(CFLAGS) -o central $(OBJ)
 
-src/Central/main.o: src/Central/main.c $(DEPS)
+obj/main.o: src/Central/main.c $(DEPS)
+	@mkdir -p obj
 	$(CC) $(CFLAGS) -c -o $@ src/Central/main.c
 
-src/Central/Central.o: src/Central/Central.c $(DEPS)
+obj/Central.o: src/Central/Central.c $(DEPS)
+	@mkdir -p obj
 	$(CC) $(CFLAGS) -c -o $@ src/Central/Central.c
 
-src/Central/Funções/Sinais.o: src/Central/Funções/Sinais.c $(DEPS)
+obj/Sinais.o: src/Central/Funções/Sinais.c $(DEPS)
+	@mkdir -p obj
 	$(CC) $(CFLAGS) -c -o $@ src/Central/Funções/Sinais.c
 
-src/Central/Funções/Configuração.o: src/Central/Funções/Configuração.c $(DEPS)
+obj/Configuração.o: src/Central/Funções/Configuração.c $(DEPS)
+	@mkdir -p obj
 	$(CC) $(CFLAGS) -c -o $@ src/Central/Funções/Configuração.c
 
-src/Central/Funções/Instância.o: src/Central/Funções/Instância.c $(DEPS)
+obj/Instância.o: src/Central/Funções/Instância.c $(DEPS)
+	@mkdir -p obj
 	$(CC) $(CFLAGS) -c -o $@ src/Central/Funções/Instância.c
 
-src/Central/Funções/Tarifador.o: src/Central/Funções/Tarifador.c $(DEPS)
+obj/Tarifador.o: src/Central/Funções/Tarifador.c $(DEPS)
+	@mkdir -p obj
 	$(CC) $(CFLAGS) -c -o $@ src/Central/Funções/Tarifador.c
 
-src/Central/Funções/Consola.o: src/Central/Funções/Consola.c $(DEPS)
+obj/Consola.o: src/Central/Funções/Consola.c $(DEPS)
+	@mkdir -p obj
 	$(CC) $(CFLAGS) -c -o $@ src/Central/Funções/Consola.c
 
 clean:
-	rm -f central src/Central/*.o src/Central/Funções/*.o
+	rm -f central
+	rm -rf obj

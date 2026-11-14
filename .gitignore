@@ -4,3 +4,4 @@
 /tarifador
 *.o
 *.zip
+/obj/
