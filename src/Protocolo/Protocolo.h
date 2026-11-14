@@ -80,8 +80,8 @@ typedef struct {
     char tipo[TAM_TIPO];
     char username[TAM_USERNAME];
     pid_t pid;
-    char pipe_para_central[TAM_NOME_PIPE];
-    char pipe_para_estafeta[TAM_NOME_PIPE];
+    char pipeParaCentral[TAM_NOME_PIPE];
+    char pipeParaEstafeta[TAM_NOME_PIPE];
 } MsgRegisto;
 
 typedef struct {
@@ -97,7 +97,7 @@ typedef struct {
     float peso;
     float distancia;
     float valor;
-    int segundos_restantes;
+    int segundosRestantes;
 } MsgAnuncio;
 
 typedef struct {

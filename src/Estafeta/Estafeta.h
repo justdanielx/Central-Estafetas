@@ -10,11 +10,11 @@
 
 typedef struct {
     char username[TAM_USERNAME];
-    char central_pipe[TAM_CAMINHO];
-    char pipe_para_central[TAM_NOME_PIPE];
-    char pipe_para_estafeta[TAM_NOME_PIPE];
-    int fd_escrita;
-    int fd_leitura;
+    char centralPipe[TAM_CAMINHO];
+    char pipeParaCentral[TAM_NOME_PIPE];
+    char pipeParaEstafeta[TAM_NOME_PIPE];
+    int fdEscrita;
+    int fdLeitura;
 } ConfigEstafeta;
 
 #endif

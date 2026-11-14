@@ -18,16 +18,16 @@
 #define TAM_CAMINHO 512
 
 typedef struct {
-    int max_estafetas;
-    int prazo_aceita;
+    int maxEstafetas;
+    int prazoAceita;
     char bindir[TAM_CAMINHO];
-    char central_pipe[TAM_CAMINHO];
+    char centralPipe[TAM_CAMINHO];
 } ConfigCentral;
 
 typedef struct {
     pid_t pid;
-    int fd_escrita;
-    int fd_leitura;
+    int fdEscrita;
+    int fdLeitura;
 } Tarifador;
 
 typedef struct {
@@ -36,7 +36,7 @@ typedef struct {
     int concluidos;
     int expirados;
     int perdidos;
-    float valor_concluido;
+    float valorConcluido;
 } Estatisticas;
 
 typedef struct {
