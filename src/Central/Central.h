@@ -3,6 +3,7 @@
 
 #include <sys/types.h>
 #include <signal.h>
+
 #include "../Protocolo/Protocolo.h"
 
 #define DEF_MAXESTAFETAS 10

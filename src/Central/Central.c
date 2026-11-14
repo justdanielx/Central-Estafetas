@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <unistd.h>
+
 #include "Central.h"
 
 int iniciaCentral(Central *central, int argc, char *argv[]) {

@@ -1,5 +1,6 @@
 #include <string.h>
 #include <signal.h>
+
 #include "../Central.h"
 
 volatile sig_atomic_t terminar = 0;

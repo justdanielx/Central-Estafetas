@@ -2,6 +2,7 @@
 #include <string.h>
 #include <errno.h>
 #include <unistd.h>
+
 #include "../Central.h"
 
 static char entrada[TAM_LINHA_CMD];

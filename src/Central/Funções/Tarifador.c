@@ -5,6 +5,7 @@
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/wait.h>
+
 #include "../Central.h"
 
 static int escreveTudo(int fd, const void *buf, size_t n) {

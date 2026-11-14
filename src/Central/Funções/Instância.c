@@ -5,6 +5,7 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <sys/types.h>
+
 #include "../Central.h"
 
 int verificaInstanciaUnica(void) {

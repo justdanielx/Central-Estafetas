@@ -2,6 +2,7 @@
 #define ESTAFETA_H
 
 #include <sys/types.h>
+
 #include "../Protocolo/Protocolo.h"
 
 #define TAM_LINHA_CMD 256
