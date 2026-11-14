@@ -1,6 +1,6 @@
-central
-estafeta
-gerador
-tarifador
+/central
+/estafeta
+/gerador
+/tarifador
 *.o
 *.zip
