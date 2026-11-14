@@ -38,9 +38,9 @@
 #define TIPO_ENCERRA "Encerra"
 
 //Nomes dos Pipes dos Estafetas
-#define PREFIXO_PIPE_EST "/tmp/entrega_so_est_"
-#define FMT_PIPE_EST_PARA_CENTRAL "/tmp/entrega_so_est_%d_e2c"
-#define FMT_PIPE_CENTRAL_PARA_EST "/tmp/entrega_so_est_%d_c2e"
+#define PREFIXO_PIPE_EST "/tmp/central_estafetas_est_"
+#define FMT_PIPE_EST_PARA_CENTRAL "/tmp/central_estafetas_est_%d_e2c"
+#define FMT_PIPE_CENTRAL_PARA_EST "/tmp/central_estafetas_est_%d_c2e"
 
 //Estados e Respostas
 typedef enum {
